@@ -27,6 +27,9 @@ class ModelInput(BaseModel):
     CycleNumber: int
     TotalDaysofFertility: int
     Gravida: int
+#Define input schema for embedding lookup    
+class NodeRequest(BaseModel):
+    node_name: str
 
 # Root endpoint
 @app.get("/")
