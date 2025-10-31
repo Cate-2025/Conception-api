@@ -73,3 +73,12 @@ def get_metrics():
         return results.to_dict()
     else:
         raise HTTPException(status_code=404, detail="Evaluation metrics not found")
+    
+
+@app.post("/embedding")
+def get_embedding(req: NodeRequest):
+    # Replace this with your actual model logic
+    if req.node_name == "patient_001":
+        return {"node": req.node_name, "embedding": [0.1, 0.2, 0.3]}
+    else:
+        raise HTTPException(status_code=404, detail="Node not found")
